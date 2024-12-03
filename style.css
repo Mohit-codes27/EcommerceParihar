@@ -564,7 +564,7 @@ html {
 }
 
 .carousel-images img {
-    width: 33.33%; /* Each image takes up 1/3rd of the width */
+    width: 50%; /* Each image takes up 1/3rd of the width */
     height: 200px; /* Ensure consistent height */
     object-fit: contain; /* Make images fill the container without distortion */
 }
