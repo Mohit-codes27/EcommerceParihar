@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parihar E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nunito:wght@400;700&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700&family=Rubik:wght@400;700&family=Quicksand:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Karla:wght@400;700&family=Sora:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="https://ee41dff1-4c2e-489e-bcba-505948.godaddysites.com/"><img src="logo.png" alt="Parihar India Logo" class="logo-img"></a>
+        </div>
+        <ul class="nav-links nav-buttons">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="cart">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-button"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <ul class="cart-button">
+                <li><a href="#" class="icon" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section id="products">
+    <h2>Featured Products</h2>
+    <div id="product-grid"></div>
+</section>
+<div id="cart-section" class="cart-overlay">
+    <div class="cart-content">
+        <h3 style="color: black;">Shopping Cart</h3>
+        <ul id="cart-items"></ul>
+        <!-- <p>Total: $<span id="total-price">0.00</span></p> -->
+    </div>
+    <div class="cart-details">
+        <p>Products Price: ₹<span id="products-price">0</span></p>
+        <p>GST (12%): ₹<span id="gst">0</span></p>
+        <p>Delivery Charges: Free</p>
+        <hr>
+        <p><strong>Final Price : ₹<span id="final-price">0</span></strong></p>
+        <div class="cart-close">
+            <button class="card-button" onclick="toggleCart()">Proceed</button>
+        </div>
+    </div>    
+</div>
+<script src="script.js"></script>
+</body>
+</html>

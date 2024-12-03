@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: #f0f8ff;
+    color: #ffffff;
+    line-height: 1.6;
+    user-select: none;
+}
+
+header {
+    background-color: #000000;
+    /* padding: 1rem 0; */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* margin: auto; */
+}
+.logo {
+    height: auto;
+}
+.logo h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+.logo p {
+    color: #cfcfcf;
+    font-size: 14px;
+}
+.logo-img {
+    width: 200px;
+    height: auto;
+    margin-bottom: -2px;
+    /* margin-left: -7.5vw;  */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-buttons{
+   margin: 8vh 0vw vw 6vw;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+/* Apply oval hover effect */
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 8px 20px; /* Add more padding for spacing around text */
+    position: relative;
+    z-index: 1; /* Ensure text is above the oval */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: white; /* Change text color on hover */
+}
+
+/* Hover effect with oval shape */
+.nav-links li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: #00762C; /* Oval background color */
+    border-radius: 50px;
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: -1; /* Place oval behind text */
+}
+
+/* Expands the oval background on hover */
+.nav-links li a:hover::before {
+    width: 100%;  /* Slightly larger than 100% for a cushion around text */
+    height: 100%; /* Adjust height for an oval shape */
+}
+
+.cart-button{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-left: 23vw;
+    margin-top: -7.5vh;
+}
+
+.cart-button li {
+    margin-right: 20px;
+    margin-top: 2vh;
+}
+
+.cart-button li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.cart-button li a:hover{
+    color: #ffa500;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Gap between input and button */
+    /* position: absolute;
+    top: 3%; */
+  }
+
+  /* Style for the search input field */
+  .search-input {
+    padding: 12px;
+    width: 230px;
+    border: none;
+    background-color: #3e3b3b;
+    border-radius: 30px;
+    outline: none;
+    color: white;
+  }
+
+  /* Style for the search button */
+  .search-button {
+    padding: 12px 15px;
+    border: none;
+    background-color: #f0f8ff;
+    color: #333;
+    border-radius: 65px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Add hover effect to the button */
+  .search-button:hover {
+    background-color: #f0f0f0; /* Slightly darker shade on hover */
+  }
+
+  .cart{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+main {
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
+}
+#products {
+    padding: 2rem;
+    
+}
+
+#products h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+/* Product grid container */
+#product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Individual product card styling */
+.product-card {
+    flex: 1 1 calc(33.333% - 20px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 65vh;
+    position: relative; 
+    padding-bottom: 50px;
+}
+
+.product-details {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Responsive styling for smaller screens */
+/* @media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 calc(50% - 20px); 
+    }
+} */
+
+/* @media (max-width: 480px) {
+    .product-card {
+        flex: 1 1 100%; 
+    }
+} */
+
+
+.product-card:hover {
+    transform: scale(1.05);
+    background-color: #fbfcf8;
+}
+
+.product-card img {
+    width: 32%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 1rem;
+    width: 90%;
+}
+
+.product-details h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-details .desc {
+    font-size: 16px;
+    color: #666;
+    width: 100%;
+}
+
+.desc{
+    text-overflow: clip clip;
+}
+
+.box {
+    width: 200px;
+    padding: 10px;
+    border: 0px solid #333;
+    margin-top: 5px;
+    color: #555;
+    overflow: auto;  
+    height: 100px;
+}
+
+.product-details .price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-details button {
+    /* background-color: #ffa500; */
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8.5vw;
+}
+
+.product-details button:hover {
+    background-color: #00762C;
+}
+.product-details .cart-button{
+    background-color: #2C3E50;
+    position: absolute;
+    bottom: 10px; /* Position it slightly above the bottom */
+    left: 19.5%;
+    transform: translateX(-50%);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Apply smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar styling */
+
+  .box::-webkit-scrollbar {
+    width: 1px; /* Width of the scrollbar */
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+    height: 100%;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f0f2f5; /* Light background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #2C3E50; /* Navy blue for the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid #f0f2f5; /* Adds space around the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #34495E; /* Lighter blue on hover for better visibility */
+  }
+
+  /* Add these styles to style3.css */
+
+/* Cart Overlay */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cart-overlay.show {
+    transform: translateX(0);
+}
+
+.cart-content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+  overflow-y: auto;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+
+}
+
+#cart-items li img {
+    width: 50px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.cart-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-card img{
+    width: 10px;
+    height: 10px;
+}
+
+.card-context{
+    font-weight: 500;
+    margin: 10px;
+    font-size: 12px;
+}
+
+/* .cart-button {
+    background-color: #2C3E50;
+    color: #fff;
+} */
+
+#cart-count {
+    background-color: black;
+    color: white;
+    font-weight: 800;
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; /* adjust to control circle size */
+    height: 28px; /* adjust to control circle size */
+}
+
+
+#total-price{
+    color: black;
+}
+
+.card-button{
+    background-color: #ffa500;
+    border: none;
+    color: #fff;
+    padding: 5px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #2C3E50;
+    color: #fff;
+}
+
+.card-button:hover {
+    background-color: #00762C;
+}
+.cart-details{
+    color: black;
+    /* margin-top: 50vh;
+    margin-left: 2vw; */
+    position: absolute;
+    bottom: 0;
+    padding-left: 2vw;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    padding: 10px;
+    
+}
+.cart-close {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.cart-overlay .show::-webkit-scrollbar {
+    width: 1px; /* Width of the scrollbar */
+    height: 100%;
+}
+.quantity-button{
+    background-color: #ffa60000;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #2C3E50;
+    font-size: 1.2rem; 
+    line-height: 1; 
+    padding: 0 20px 0 20px;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center; /* Center-aligns the icons */
+    justify-content: space-between; /* Adjusts spacing between items */
+}
+.minus-btn, .plus-btn{
+    background-color: #2C3E50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* position: absolute; */
+    /* bottom: 10%; */
+    /* left: 39.5%; */
+}
+.quantity-control {
+    display: flex;
+    flex-direction: row; /* Ensures row layout */
+    align-items: center;
+    gap: 5px; /* Adjust space between buttons */
+    position: absolute;
+    bottom: 4%;
+    left: 38%;
+}
+
+.quantity-control button {
+    width: 30px; /* Adjust as needed */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.quantity-control span {
+    padding: 0 10px; /* Adjust padding if needed */
+    font-size: 18px;
+    color: black;
+}
+
+/* Scroll Animation */
+.product-card {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Slight downward position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.product-card.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Original position */
+}
+
+/* Hover Animation */
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* Make the carousel take up the full width of the parent */
+    height: 200px; /* Adjust the height as needed */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.carousel-images {
+    display: flex;
+    width: 300%; /* For 3 images, each taking up 100% of the parent width */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 33.33%; /* Each image takes up 1/3rd of the width */
+    height: 200px; /* Ensure consistent height */
+    object-fit: contain; /* Make images fill the container without distortion */
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    z-index: 1;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
