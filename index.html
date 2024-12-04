@@ -42,15 +42,24 @@
         <!-- <p>Total: $<span id="total-price">0.00</span></p> -->
     </div>
     <div class="cart-details">
-        <p>Products Price: ₹<span id="products-price">0</span></p>
-        <p>GST (12%): ₹<span id="gst">0</span></p>
-        <p>Delivery Charges: Free</p>
+        <p>
+            Products Price: <span id="products-price">0</span>
+        </p>
+        <p>
+            GST (12%): <span id="gst">0</span>
+        </p>
+        <p>
+            Delivery Charges: <span>Free</span>
+        </p>
         <hr>
-        <p><strong>Final Price : ₹<span id="final-price">0</span></strong></p>
+        <p class="final-price">
+            <strong>Final Price:</strong> <span id="final-price">0</span>
+        </p>
         <div class="cart-close">
             <button class="card-button" onclick="toggleCart()">Proceed</button>
         </div>
-    </div>    
+    </div>
+        
 </div>
 <script src="script.js"></script>
 </body>
