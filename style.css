@@ -455,22 +455,40 @@ html {
 .card-button:hover {
     background-color: #00762C;
 }
-.cart-details{
+.cart-details {
     color: black;
-    /* margin-top: 50vh;
-    margin-left: 2vw; */
-    position: absolute;
+    position: sticky;
     bottom: 0;
-    padding-left: 2vw;
+    padding: 10px;
     background-color: white;
     border-top: 1px solid #ccc;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
-    position: sticky;
-    bottom: 0;
-    padding: 10px;
-    
 }
+
+.cart-details p {
+    display: flex;
+    justify-content: space-between; /* Aligns text and value to opposite corners */
+    margin: 5px 0;
+}
+
+.cart-details strong {
+    font-weight: bold;
+}
+
+.cart-details span {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Ensures the Final Price is aligned properly */
+.cart-details .final-price {
+    font-size: 18px; /* Optional: Make it slightly larger for emphasis */
+    font-weight: bold;
+    margin-top: 10px; /* Add spacing if needed */
+}
+
+
 .cart-close {
     text-align: center;
     margin-top: 15px;
